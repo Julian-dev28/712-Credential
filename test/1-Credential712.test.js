@@ -45,6 +45,7 @@ describe('Credential', function () {
         await expect(this.registry.connect(rando).registerCredential(subject, tokenId, credential))
           .to.emit(this.registry, 'Transfer')
           .withArgs(ethers.constants.AddressZero, subject, tokenId);
+        await expect(await this.registry.connect(rando).ownerOf(tokenId)).to.equal(subject)
         await expect(await this.registry.checkRegistration(rando.address)).to.be.true;
       });
   });
