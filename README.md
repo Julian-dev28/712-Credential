@@ -37,7 +37,7 @@ yarn deploy
 ```
 <br>
 
-Copy the deployment address into [sign](scripts/2-sign.js) and [register](scripts/3-register.js) 
+Copy the deployment address into the [sign](scripts/2-sign.js) and [register](scripts/3-register.js) scripts
 <br>
 
 To sign the 712 data run : <br>
@@ -46,7 +46,7 @@ yarn sign
 ```
 <br>
 
-Copy the signature data into [register](scripts/3-register.js) 
+Copy the signature data into the [register](scripts/3-register.js) script
 <br>
 
 to register the Credential run : <br>
