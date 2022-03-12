@@ -8,14 +8,12 @@ async function deploy(name, ...params) {
 
 describe('Credential', function () {
   beforeEach(async function() {
-
-    this.accounts = await ethers.getSigners();
     ({ chainId: this.chainId } = await ethers.provider.getNetwork());
   });
 
   describe('Register Credential', function () {
     before(async function() {
-      const [rando, issuer] = await ethers.getSigners();
+      const [issuer, rando] = await ethers.getSigners();
       this.registry = await deploy('Credential', 'Name', 'Symbol', issuer.address);
     });
 
@@ -23,7 +21,7 @@ describe('Credential', function () {
         /**
          * Account[1] (minter) creates signature
          */
-        const [rando, issuer] = await ethers.getSigners();
+        const [issuer, rando] = await ethers.getSigners();
         const tokenId = 8
         const subject = rando.address
         const credential = await issuer._signTypedData(
