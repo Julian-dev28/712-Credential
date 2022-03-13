@@ -20,6 +20,7 @@ contract Credential is ERC721, EIP712, AccessControl {
     address issuer
   ) ERC721(name, symbol) EIP712(name, '1.0.0') {
     _setupRole(ISSUER, issuer);
+    _setupRole(DEFAULT_ADMIN_ROLE, _msgSender());
     _issuer = issuer;
   }
 

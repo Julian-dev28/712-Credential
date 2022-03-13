@@ -19,6 +19,7 @@ contract Credential1155 is ERC1155, EIP712, AccessControl {
     address issuer
   ) ERC1155(metadata) EIP712(name, '1.0.0') {
     _setupRole(ISSUER, issuer);
+    _setupRole(DEFAULT_ADMIN_ROLE, _msgSender());
     _issuer = issuer;
   }
 
