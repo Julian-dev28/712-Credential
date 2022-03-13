@@ -19,7 +19,7 @@ describe('Credential', function () {
 
       it('Credential', async function () {
         /**
-         * Account[1] (minter) creates signature
+         * Issuer creates signature
          */
         const [issuer, rando] = await ethers.getSigners();
         const tokenId = 8
