@@ -32,7 +32,6 @@ contract Credential1155 is ERC1155, EIP712, AccessControl {
   {
     return super.supportsInterface(interfaceId);
   }
-
   function checkRegistration(address subject) public view returns (bool) {
     // Check if a subject has a registered credential
     return registered[subject] ? true : false;
