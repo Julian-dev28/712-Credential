@@ -9,12 +9,13 @@ async function main() {
   const [issuer, rando] = await ethers.getSigners();
   console.log(`Register Credential`);
 
-  const registry    = (await attach('Credential', '0x5FbDB2315678afecb367f032d93F642f64180aa3')).connect(rando);
+  const registry    = (await attach('Credential1155', '0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512')).connect(rando);
   const tokenId     = process.env.TOKENID || 0x1;
   const subject     = process.env.SUBJECT || rando.address;
-  const credential   = process.env.SIGNATURE || '0x6d38fbed48a6dc9f18cd9ed26ebfeefd468b8fcf7d6ab64a145e690aa49d6be927699a2efff9994715bbcd23a4238c7c050f1fedb3c2fd16049534e84083f4391c';
+  const amount      = 5
+  const credential  = process.env.SIGNATURE || '0x44838cce4da5693c61f98143889aeef5f74aa5358db0543f0ef309cf2f6e7bd909bab5bb86d4ed29dbcb4c9289c8858ba89694438bdbaa27947c052206b4adb41c';
 
-  const tx = await registry.registerCredential(subject, tokenId, credential);
+  const tx = await registry.registerCredential(subject, tokenId, amount, credential);
   const receipt = await tx.wait();
 
   console.log(receipt);

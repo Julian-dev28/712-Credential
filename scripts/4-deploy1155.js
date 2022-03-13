@@ -9,9 +9,9 @@ async function main() {
   const [issuer, rando] = await ethers.getSigners();
   console.log(`Deploying contracts:`);
 
-  const registry = (await deploy('Credential', 'Name', 'Symbol' , issuer.address));
+  const registry = (await deploy('Credential1155', 'Name', 'ipfs://ERC1155-MetaData', issuer.address));
 
-  console.log({ registry: registry.address });
+  console.log({ registry: registry.address })
 }
 
 main()
