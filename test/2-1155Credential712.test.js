@@ -45,7 +45,10 @@ describe('Credential', function () {
         );
         await this.registry.connect(rando).registerCredential(subject, tokenId, amount, credential)
         await expect(await this.registry.connect(rando).balanceOf(rando.address, tokenId)).to.equal(5)
+        const balance = await this.registry.connect(rando).balanceOf(rando.address, tokenId)
+        const registered = await this.registry.checkRegistration(rando.address)
         await expect(await this.registry.checkRegistration(rando.address)).to.be.true;
+        console.log({ subjectAddress: subject, balance: balance, tokenId: tokenId,registered: registered })
       });
   });
 });

@@ -50,7 +50,7 @@ describe('Credential', function () {
       await expect(await this.registry.connect(rando).ownerOf(tokenId)).to.equal(subject)
       const registered = await this.registry.checkRegistration(rando.address)
       await expect(await this.registry.checkRegistration(rando.address)).to.be.true;
-      console.log({ registered: registered, owner: owner })
+      console.log({ subjectAddress: owner,tokenId: tokenId, registered: registered })
     });
   });
 });
