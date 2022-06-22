@@ -26,6 +26,7 @@
     "deploy": "npx hardhat run scripts/1-deploy.js --network localhost",
     "sign": "npx hardhat run scripts/2-sign.js --network localhost",
     "register": "npx hardhat run scripts/3-register.js --network localhost",
+    "verify": "npx hardhat run scripts/4-verify.js --network localhost",
     "deploy1155": "npx hardhat run scripts/4-deploy1155.js --network localhost",
     "sign1155": "npx hardhat run scripts/5-sign1155.js --network localhost",
     "register1155": "npx hardhat run scripts/6-register1155.js --network localhost"

@@ -7,8 +7,7 @@ async function deploy(name, ...params) {
 
 async function main() {
   const [issuer, rando] = await ethers.getSigners();
-  console.log(`Deploying contracts:`);
-
+  console.log(`Deploying contracts:`);  
   const registry = (await deploy('Credential', 'Name', 'Symbol' , issuer.address));
 
   console.log({ registry: registry.address });
