@@ -1,10 +1,14 @@
-# IAM Credential
-[Credential.sol](contracts/Credential.sol) and [Credential1155.sol](contracts/Credential1155.sol) are smart contracts that allow a user to register a credential. These contract use OpenZeppelin open source contracts such AccessControl, ECDSA, and EIP712.  
 
-These contracts have a few main features, namely:
-* The Issuer address in the constructor is a priveledged signing address
-* Once a credential is registered, the subject address is minted an ERC721 or ERC1155 token
-* Users can check if a subject has a registered credential by calling ``checkRegistration()``
+# Credential Smart Contracts
+[Credential.sol](contracts/Credential.sol) and [Credential1155.sol](contracts/Credential1155.sol) are smart contracts designed to allow users to register credentials. The contracts use OpenZeppelin open source contracts, such as AccessControl, ECDSA, and EIP712.
+
+## Main Features
+The main features of these contracts are:
+
+* The Issuer address specified in the constructor is a privileged signing address.
+* Once a credential is registered, the subject address is minted an ERC721 or ERC1155 token.
+* Users can check if a subject has a registered credential by calling ``checkRegistration()``.
+* Credential.sol and Credential1155.sol use Access Control and ECDSA signature checking to ensure that a credential is signed by the specified issuer.
 <br>
 
 [Credential.sol](contracts/Credential.sol) and [Credential1155.sol](contracts/Credential1155.sol) use Access Control and ECDSA signature checking to ensure that a credential is signed by the issuer that was specified in the constructor
